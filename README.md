@@ -8,10 +8,11 @@ Welcome to the Search Engine Demo App! This web-based application demonstrates t
 
 - **Input:** Users can enter search queries in the provided search bar.
 - **Search Engine:** Users can select pretrained LM to use for searching including Skipgram, Skipgram with Negative Sampling, GloVe, and Glove (Gensim)
-*  * The Skipgram and Skipgram (Negative Sampling) is noticeably slow due to some inefficient in recalling word embeddings.
 - **Submit Button:** Users click submit after typing the input and select the search engine. The model will search for the most similar words
 - **Search Result:** The 10 most similar passages are returned as a text next to the submit button.
 - **Dataset:** The language models were trained with data from nltk.corpus.reuters.sents(). 
+
+*Note that the Skipgram and the Skipgram (Negative Sampling) are noticeably slower due to word embedding reconstruction.*
 
 ### Prerequisites
 
