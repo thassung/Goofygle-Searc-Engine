@@ -8,6 +8,7 @@ Welcome to the Search Engine Demo App! This web-based application demonstrates t
 
 - **Input:** Users can enter search queries in the provided search bar.
 - **Search Engine:** Users can select pretrained LM to use for searching including Skipgram, Skipgram with Negative Sampling, GloVe, and Glove (Gensim)
+*  * The Skipgram and Skipgram (Negative Sampling) is noticeably slow due to some inefficient in recalling word embeddings.
 - **Submit Button:** Users click submit after typing the input and select the search engine. The model will search for the most similar words
 - **Search Result:** The 10 most similar passages are returned as a text next to the submit button.
 - **Dataset:** The language models were trained with data from nltk.corpus.reuters.sents(). 
@@ -62,5 +63,8 @@ __Similarity Test__
 
 One thing to note here is that the corpus size used in model training are not the same. The Skipgram and Negative Sampling models are train with data from nltk.corpus.reuters. The GloVe model is trained with the same dataset but only the first 1,000 sentences from the avaiable 54,716 sentences in the corpus due to the shortage of memory required to initialize the co-occurance matrix. GloVe (Gensim) model is pretrained and can be obtain from [here](https://nlp.stanford.edu/projects/glove/).
 
-Semantic and syntactic tests are performed using data from [here](https://www.fit.vutbr.cz/~imikolov/rnnlm/word-test.v1.txt). Semantic tests are performed using data in **capital-common-countries** section and syntaction tests are performed using data in **gram7-past-tense** section. The accuracy is calculated using the correct inferences and the total inferences where every word in the test is known by the LM.
+Analogy tests are performed using data from [here](https://www.fit.vutbr.cz/~imikolov/rnnlm/word-test.v1.txt). Semantic tests are performed using data in *capital-common-countries* section and syntaction tests are performed using data in *gram7-past-tense* section. The accuracy is calculated using the correct inferences and the total inferences where every word in the test is known by the LM.
 
+Similarity tests are performed using data from [WordSim353 - Similarity and Relatedness](http://alfonseca.org/eng/research/wordsim353.html). The MSE is calculated between the human labeled similarity between word pairs from the dataset and the cosine similarity of the word vectors from each model. Spearman Rank Correlation was done in the similar fashion.
+
+The performance of the self-trained model is very bad as expected. They cannot get any correct answer in analogy tests and their correlation of similarity test with the human lebeled data is nonexistent. However, the pretrained model, GloVe (Gensim), performs much better. It scores really high in semantic testing and moderate in syntactic test. In similarity test, the GloVe (Gensim) model also shows somewhat significant correlation with the human judgement result.
