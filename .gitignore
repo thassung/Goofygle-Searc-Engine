@@ -3,3 +3,5 @@
 model_500
 GloVe_Gensim.model.vectors.npy
 old
+.gitattributes
+.gitignore
