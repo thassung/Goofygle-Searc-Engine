@@ -34,8 +34,7 @@ Welcome to the Search Engine Demo App! This web-based application demonstrates t
 
 3. Navigate to the app directoty:
    ```bash
-   cd Goofygle-Search-Engine
-   cd app
+   cd Goofygle-Search-Engine/app
    ```
 
 4. Start the flask application:
@@ -69,3 +68,7 @@ Analogy tests are performed using data from [here](https://www.fit.vutbr.cz/~imi
 Similarity tests are performed using data from [WordSim353 - Similarity and Relatedness](http://alfonseca.org/eng/research/wordsim353.html). The MSE is calculated between the human labeled similarity between word pairs from the dataset and the cosine similarity of the word vectors from each model. Spearman Rank Correlation was done in the similar fashion.
 
 The performance of the self-trained model is very bad as expected. They cannot get any correct answer in analogy tests and their correlation of similarity test with the human lebeled data is nonexistent. However, the pretrained model, GloVe (Gensim), performs much better. It scores really high in semantic testing and moderate in syntactic test. In similarity test, the GloVe (Gensim) model also shows somewhat significant correlation with the human judgement result.
+
+### Note
+
+In the python notebooks *0.3 - GloVe (Gensim).ipynb*, glove.6B.100d.txt is used to create a model and perform tests. However, due to the 100MB limited individual file size in GitHub repository, the said model or dataset cannot be uploaded to the repository (>100MB). The model of GloVe-Gensim.model and GloVe_Gensim.model.vectors.npy are generated from glove.6B.50d.txt which is a smaller dataset to avoid nuisance of having to run a script to train or download the model prior to accessing the demo app.
