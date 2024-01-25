@@ -42,6 +42,8 @@ Welcome to the Search Engine Demo App! This web-based application demonstrates t
    python main.py
    ```
 
+   You can access the application via localhost:8080/
+
 ### LM performance
 
 __Analogy Test__
