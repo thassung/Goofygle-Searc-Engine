@@ -1,0 +1,5 @@
+.xlsx
+*.xlsx
+model_500
+GloVe_Gensim.model.vectors.npy
+old
