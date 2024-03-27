@@ -4,3 +4,7 @@ model_500
 old
 .gitattributes
 .gitignore
+model
+*.pth
+*.model
+*.npy
